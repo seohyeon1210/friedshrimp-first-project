@@ -61,9 +61,10 @@ const animationMove = function(selector){
     // 1. selector 매개변수로 이동할 대상 요소 노드 가져오기
     const targetEl = document.querySelector(selector);
     // 2. 현재 웹 브라우저의 스크롤 정보(y 값)
-    const browerScrollY = window.pageYOffset;
+    const browserScrollY = window.pageYOffset;
     // 3. 이동할 대상의 위치(y 값)
-    const targetScrollY = targetEl.getBoundingClienRect().top + browerScrollY;
+    const targetScrollY = targetEl.getBoundingClientRect().top + browserScrollY;
+    // 오타 조심... getBoundingClienRect() x -> getBoundingClientRect() o
     // 4. 스크롤 이동
     window.scrollTo({ top: targetScrollY, behavior: 'smooth' });
 }
